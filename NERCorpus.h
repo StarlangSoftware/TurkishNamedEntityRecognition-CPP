@@ -14,7 +14,7 @@ public:
     NERCorpus();
     NERCorpus emptyCopy();
     NERCorpus(string fileName);
-    void addSentence(NamedEntitySentence sentence);
+    void addSentence(NamedEntitySentence* sentence);
     void writeToFile(string fileName);
 };
 

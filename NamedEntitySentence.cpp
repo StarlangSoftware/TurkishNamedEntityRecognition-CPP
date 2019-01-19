@@ -27,25 +27,25 @@ NamedEntitySentence::NamedEntitySentence(string sentence) : Sentence(sentence) {
                     if (word.find("e_enamex>", word.size() - 9) == word.size() - 9){
                         candidate = word.substr(word.find_first_of('>') + 1, word.find_first_of('<') - word.find_first_of('>') - 1);
                         if (!candidate.empty()){
-                            words.emplace_back(NamedEntityWord(candidate, type));
+                            words.emplace_back(new NamedEntityWord(candidate, type));
                         }
                         type = NamedEntityType::NONE;
                     } else {
                         candidate = word.substr(word.find_first_of('>') + 1);
                         if (!candidate.empty()){
-                            words.emplace_back(NamedEntityWord(candidate, type));
+                            words.emplace_back(new NamedEntityWord(candidate, type));
                         }
                     }
                 } else {
                     if (word.find("e_enamex>", word.size() - 9) == word.size() - 9){
                         candidate = word.substr(0, word.find_first_of('<'));
                         if (!candidate.empty()){
-                            words.emplace_back(NamedEntityWord(candidate, type));
+                            words.emplace_back(new NamedEntityWord(candidate, type));
                         }
                         type = NamedEntityType::NONE;
                     } else {
                         if (!word.empty()){
-                            words.emplace_back(NamedEntityWord(word, type));
+                            words.emplace_back(new NamedEntityWord(word, type));
                         }
                     }
                 }
