@@ -23,3 +23,5 @@ cmake-build-debug/CMakeFiles/TestGazetteer.dir/DependInfo.cmake
 cmake-build-debug/CMakeFiles/TestGazetteer.dir/flags.make
 cmake-build-debug/CMakeFiles/TestGazetteer.dir/link.txt
 cmake-build-debug/CMakeFiles/TestGazetteer.dir/progress.make
+cmake-build-debug/CMakeFiles/NamedEntityRecognition.dir/NamedEntitySentence.cpp.o
+cmake-build-debug/CMakeFiles/NamedEntityRecognition.dir/NERCorpus.cpp.o
