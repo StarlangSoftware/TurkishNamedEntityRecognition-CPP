@@ -13,8 +13,7 @@ NamedEntitySentence::NamedEntitySentence() {
 NamedEntitySentence::NamedEntitySentence(string sentence) : Sentence(sentence) {
     string entityType, candidate;
     NamedEntityType type = NamedEntityType::NONE;
-    istringstream iss(sentence);
-    vector<string> wordArray(istream_iterator<string>{iss}, istream_iterator<string>());
+    vector<string> wordArray = Word::split(sentence);
     for (const string& word : wordArray){
         if (!word.empty()){
             if (word != "<b_enamex"){
