@@ -17,13 +17,13 @@ NamedEntitySentence::NamedEntitySentence(string sentence) : Sentence(sentence) {
     for (const string& word : wordArray){
         if (!word.empty()){
             if (word != "<b_enamex"){
-                if (word.rfind("TYPE=\"", 0) == 0){
+                if (Word::startsWith(word, "TYPE=\"")){
                     int typeIndexEnd = word.find_first_of('\"', 6);
                     if (typeIndexEnd != -1){
                         entityType = word.substr(6, typeIndexEnd - 6);
                         type = getNamedEntityType(entityType);
                     }
-                    if (word.find("e_enamex>", word.size() - 9) == word.size() - 9){
+                    if (Word::endsWith(word, "e_enamex>")){
                         candidate = word.substr(word.find_first_of('>') + 1, word.find_first_of('<') - word.find_first_of('>') - 1);
                         if (!candidate.empty()){
                             words.emplace_back(new NamedEntityWord(candidate, type));
@@ -36,7 +36,7 @@ NamedEntitySentence::NamedEntitySentence(string sentence) : Sentence(sentence) {
                         }
                     }
                 } else {
-                    if (word.find("e_enamex>", word.size() - 9) == word.size() - 9){
+                    if (Word::endsWith(word, "e_enamex>")){
                         candidate = word.substr(0, word.find_first_of('<'));
                         if (!candidate.empty()){
                             words.emplace_back(new NamedEntityWord(candidate, type));
