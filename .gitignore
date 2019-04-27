@@ -45,3 +45,11 @@ cmake-build-debug/CMakeFiles/3.12.1/CompilerIdC/a.out
 cmake-build-debug/CMakeFiles/3.12.1/CompilerIdC/CMakeCCompilerId.c
 cmake-build-debug/CMakeFiles/3.12.1/CompilerIdCXX/a.out
 cmake-build-debug/CMakeFiles/3.12.1/CompilerIdCXX/CMakeCXXCompilerId.cpp
+cmake-build-debug/TestGazetteer
+cmake-build-debug/CMakeFiles/TestGazetteer.dir/CXX.includecache
+cmake-build-debug/CMakeFiles/TestGazetteer.dir/depend.internal
+cmake-build-debug/CMakeFiles/TestGazetteer.dir/Gazetteer.cpp.o
+cmake-build-debug/CMakeFiles/TestGazetteer.dir/NamedEntitySentence.cpp.o
+cmake-build-debug/CMakeFiles/TestGazetteer.dir/NamedEntityWord.cpp.o
+cmake-build-debug/CMakeFiles/TestGazetteer.dir/NERCorpus.cpp.o
+cmake-build-debug/CMakeFiles/TestGazetteer.dir/TestGazetteer.cpp.o
