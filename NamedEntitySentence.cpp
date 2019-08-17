@@ -7,9 +7,17 @@
 #include "NamedEntitySentence.h"
 #include "NamedEntityType.h"
 
+/**
+ * Empty constructor for {@link NamedEntitySentence}
+ */
 NamedEntitySentence::NamedEntitySentence() {
 }
 
+/**
+ * Another constructor of {@link NamedEntitySentence}. It takes input a named entity annotated sentence in string
+ * form, divides the sentence with respect to space and sets the tagged words with respect to their tags.
+ * @param sentence Named Entity annotated sentence in string form
+ */
 NamedEntitySentence::NamedEntitySentence(string sentence) : Sentence(sentence) {
     string entityType, candidate;
     NamedEntityType type = NamedEntityType::NONE;

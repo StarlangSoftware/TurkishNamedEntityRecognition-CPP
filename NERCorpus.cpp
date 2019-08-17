@@ -7,13 +7,23 @@
 #include "NamedEntitySentence.h"
 #include "NamedEntityWord.h"
 
-NERCorpus::NERCorpus() {
-}
+NERCorpus::NERCorpus() = default;
 
+/**
+ * A clone method for the {@link NERCorpus} class.
+ *
+ * @return A copy of the current {@link NERCorpus} class.
+ */
 NERCorpus NERCorpus::emptyCopy() {
     return NERCorpus();
 }
 
+/**
+ * Another constructor of {@link NERCorpus} which takes a fileName of the corpus as an input, reads the
+ * corpus from that file.
+ *
+ * @param fileName Name of the corpus file.
+ */
 NERCorpus::NERCorpus(string fileName) {
     ifstream inputStream;
     inputStream.open(fileName, ifstream::in);
@@ -25,16 +35,24 @@ NERCorpus::NERCorpus(string fileName) {
     }
 }
 
+/**
+ * addSentence adds a new sentence to the sentences {@link ArrayList}
+ * @param s Sentence to be added.
+ */
 void NERCorpus::addSentence(NamedEntitySentence* sentence) {
     sentences.emplace_back(sentence);
 }
 
+/**
+ * writeToFile writes the corpus in the format given above into the file with the given fileName.
+ * @param fileName Output file name.
+ */
 void NERCorpus::writeToFile(string fileName) {
     ofstream output;
     output.open(fileName, ofstream :: out);
     for (Sentence* sentence : sentences){
         for (int i = 0; i < sentence->wordCount(); i++){
-            NamedEntityWord* word = dynamic_cast<NamedEntityWord*>(sentence->getWord(i));
+            auto* word = (NamedEntityWord*)(sentence->getWord(i));
             switch (word->getNamedEntityType()){
                 case NamedEntityType::LOCATION:
                     output << " <b_enamex TYPE=\"LOCATION\">" + word->getName() + "<e_enamex>";
