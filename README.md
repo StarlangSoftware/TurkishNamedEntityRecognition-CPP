@@ -17,3 +17,8 @@ See the Table below for typical generic named entity types.
 |LOCATION|regions, mountains, seas|
 |TIME|time expressions|
 |MONEY|monetarial expressions|
+
+-------------------------------
+You can also see either [Python](https://github.com/olcaytaner/TurkishNamedEntityRecognition-Py) 
+or [Java](https://github.com/olcaytaner/TurkishNamedEntityRecognition) repository.
+
