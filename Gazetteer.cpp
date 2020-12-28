@@ -3,6 +3,8 @@
 //
 
 #include <fstream>
+#include <utility>
+#include <Word.h>
 #include "Gazetteer.h"
 
 /**
@@ -15,7 +17,7 @@ Gazetteer::Gazetteer(string name, string fileName) {
     this->name = move(name);
     string word;
     ifstream inputStream;
-    inputStream.open("fileName", ifstream::in);
+    inputStream.open(fileName, ifstream::in);
     while (inputStream.good()){
         getline(inputStream, word);
         data.emplace(word);
@@ -38,5 +40,6 @@ string Gazetteer::getName() {
  * @return True if the word is in the Gazetteer, False otherwise.
  */
 bool Gazetteer::contains(string word) {
-    return data.find(word) != data.end();
+    string lowerCase = Word::toLowerCase(std::move(word));
+    return data.find(lowerCase) != data.end();
 }

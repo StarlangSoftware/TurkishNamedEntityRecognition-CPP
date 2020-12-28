@@ -18,7 +18,7 @@ NamedEntitySentence::NamedEntitySentence() {
  * form, divides the sentence with respect to space and sets the tagged words with respect to their tags.
  * @param sentence Named Entity annotated sentence in string form
  */
-NamedEntitySentence::NamedEntitySentence(string sentence) : Sentence(sentence) {
+NamedEntitySentence::NamedEntitySentence(string sentence) {
     string entityType, candidate;
     NamedEntityType type = NamedEntityType::NONE;
     vector<string> wordArray = Word::split(sentence);
