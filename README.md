@@ -1,5 +1,6 @@
 For Developers
 ============
+
 You can also see [Java](https://github.com/starlangsoftware/TurkishNamedEntityRecognition), [Python](https://github.com/starlangsoftware/TurkishNamedEntityRecognition-Py), [Swift](https://github.com/starlangsoftware/TurkishNamedEntityRecognition-Swift), or [C#](https://github.com/starlangsoftware/TurkishNamedEntityRecognition-CS) repository.
 
 ## Requirements
@@ -44,3 +45,20 @@ Result: The imported project is listed in the Project Explorer view and files ar
 **From IDE**
 
 After being done with the downloading and opening project, select **Build Project** option from **Build** menu. After compilation process, user can run TestGazetteer.cpp .
+
+Detailed Description
+============
+
+## Gazetteer
+
+Bir Gazetter yüklemek için
+
+	Gazetteer(String name, String fileName)
+
+Hazır Gazetteerleri kullanmak için
+
+	AutoNER()
+
+Bir Gazetteer'de bir kelime var mı diye kontrol etmek için
+
+	boolean contains(String word)
