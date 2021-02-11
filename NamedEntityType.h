@@ -20,7 +20,9 @@ enum class NamedEntityType{
  * @param entityType Entity type in string form
  * @return Entity type in {@link NamedEntityType} form
  */
-static NamedEntityType getNamedEntityType(const string entityType){
+static NamedEntityType getNamedEntityType(string entityType){
+    std::transform(entityType.begin(), entityType.end(), entityType.begin(),
+                   [](unsigned char c){ return std::toupper(c); });
     if (entityType.empty()){
         return NamedEntityType::NONE;
     } else {

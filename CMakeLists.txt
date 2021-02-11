@@ -7,5 +7,5 @@ link_directories(library)
 
 add_library(NamedEntityRecognition Gazetteer.cpp Gazetteer.h NamedEntityType.h AutoNER.h NamedEntityWord.cpp NamedEntityWord.h NamedEntitySentence.cpp NamedEntitySentence.h NERCorpus.cpp NERCorpus.h)
 target_link_libraries(NamedEntityRecognition Corpus Dictionary)
-add_executable(Test Gazetteer.cpp Gazetteer.h NamedEntityType.h AutoNER.h NamedEntityWord.cpp NamedEntityWord.h NamedEntitySentence.cpp NamedEntitySentence.h NERCorpus.cpp NERCorpus.h Test/GazetteerTest.cpp Test/NERCorpusTest.cpp)
+add_executable(Test Gazetteer.cpp Gazetteer.h NamedEntityType.h AutoNER.h NamedEntityWord.cpp NamedEntityWord.h NamedEntitySentence.cpp NamedEntitySentence.h NERCorpus.cpp NERCorpus.h Test/GazetteerTest.cpp Test/NERCorpusTest.cpp Test/NamedEntityTypeTest.cpp)
 target_link_libraries(Test Corpus Dictionary)
