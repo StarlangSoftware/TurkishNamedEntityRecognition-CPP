@@ -41,5 +41,5 @@ string Gazetteer::getName() {
  */
 bool Gazetteer::contains(string word) {
     string lowerCase = Word::toLowerCase(std::move(word));
-    return data.find(lowerCase) != data.end();
+    return data.contains(lowerCase);
 }
