@@ -6,7 +6,7 @@
 #define NAMEDENTITYRECOGNITION_NAMEDENTITYWORD_H
 
 
-#include <Word.h>
+#include "Dictionary/Word.h"
 #include "NamedEntityType.h"
 
 class NamedEntityWord : public Word {

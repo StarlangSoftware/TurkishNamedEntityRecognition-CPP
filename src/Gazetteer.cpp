@@ -4,7 +4,7 @@
 
 #include <fstream>
 #include <utility>
-#include <Word.h>
+#include "Dictionary/Word.h"
 #include "Gazetteer.h"
 
 /**
