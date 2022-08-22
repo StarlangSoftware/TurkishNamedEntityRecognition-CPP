@@ -3,7 +3,7 @@
 //
 
 #include "catch.hpp"
-#include "../NamedEntityType.h"
+#include "../src/NamedEntityType.h"
 
 TEST_CASE("NamedEntityTypeTest-testNamedEntityType") {
     REQUIRE(getNamedEntityType("person") == NamedEntityType::PERSON);

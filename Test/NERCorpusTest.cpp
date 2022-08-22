@@ -4,9 +4,9 @@
 
 #include <CounterHashMap.h>
 #include "catch.hpp"
-#include "../NERCorpus.h"
-#include "../NamedEntityType.h"
-#include "../NamedEntityWord.h"
+#include "../src/NERCorpus.h"
+#include "../src/NamedEntityType.h"
+#include "../src/NamedEntityWord.h"
 
 TEST_CASE("NERCorpusTest-testNERCorpus") {
     CounterHashMap<NamedEntityType> counter = CounterHashMap<NamedEntityType>();

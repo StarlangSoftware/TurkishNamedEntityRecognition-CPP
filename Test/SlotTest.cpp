@@ -3,7 +3,7 @@
 //
 
 #include "catch.hpp"
-#include "../Slot.h"
+#include "../src/Slot.h"
 
 TEST_CASE("SlotTest-testSlot") {
     Slot slot1 = Slot("B-depart_date.month_name");

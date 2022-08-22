@@ -1,0 +1,12 @@
+//
+// Created by Olcay Taner YILDIZ on 23.02.2021.
+//
+
+#ifndef NAMEDENTITYRECOGNITION_SLOTTYPE_H
+#define NAMEDENTITYRECOGNITION_SLOTTYPE_H
+
+enum class SlotType{
+    B, I, O
+};
+
+#endif //NAMEDENTITYRECOGNITION_SLOTTYPE_H
