@@ -9,7 +9,7 @@
  * @param name Name of the word
  * @param namedEntityType {@link NamedEntityType} of the word
  */
-NamedEntityWord::NamedEntityWord(string name, NamedEntityType namedEntityType) : Word(move(name)) {
+NamedEntityWord::NamedEntityWord(const string& name, NamedEntityType namedEntityType) : Word(name) {
     this->namedEntityType = namedEntityType;
 }
 
@@ -18,6 +18,6 @@ NamedEntityWord::NamedEntityWord(string name, NamedEntityType namedEntityType) :
  *
  * @return namedEntityType of the word.
  */
-NamedEntityType NamedEntityWord::getNamedEntityType() {
+NamedEntityType NamedEntityWord::getNamedEntityType() const{
     return namedEntityType;
 }

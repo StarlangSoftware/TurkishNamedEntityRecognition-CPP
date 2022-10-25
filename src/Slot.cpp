@@ -4,32 +4,32 @@
 
 #include "Slot.h"
 
-Slot::Slot(SlotType type, string tag) {
+Slot::Slot(SlotType type, const string& tag) {
     this->tag = tag;
     this->type = type;
 }
 
-Slot::Slot(string slot) {
+Slot::Slot(const string& slot) {
     if (slot == "O" || slot == "o"){
         this->type = SlotType::O;
         this->tag = "";
     } else {
-        string type = slot.substr(0, slot.find_first_of('-'));
-        string tag = slot.substr(slot.find_first_of('-') + 1);
-        if (type == "B"){
+        string _type = slot.substr(0, slot.find_first_of('-'));
+        string _tag = slot.substr(slot.find_first_of('-') + 1);
+        if (_type == "B"){
             this->type = SlotType::B;
         } else {
             this->type = SlotType::I;
         }
-        this->tag = tag;
+        this->tag = _tag;
     }
 }
 
-string Slot::getTag() {
+string Slot::getTag() const{
     return tag;
 }
 
-string Slot::to_string() {
+string Slot::to_string() const{
     if (type == SlotType::O){
         return "O";
     } else {
@@ -41,6 +41,6 @@ string Slot::to_string() {
     }
 }
 
-SlotType Slot::getType() {
+SlotType Slot::getType() const{
     return type;
 }

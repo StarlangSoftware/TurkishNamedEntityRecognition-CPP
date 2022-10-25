@@ -13,8 +13,8 @@
  * @param name Name of the gazetteer. This name will be used in programming to separate different gazetteers.
  * @param fileName File name of the gazetteer data.
  */
-Gazetteer::Gazetteer(string name, string fileName) {
-    this->name = move(name);
+Gazetteer::Gazetteer(const string& name, const string& fileName) {
+    this->name = name;
     string word;
     ifstream inputStream;
     inputStream.open(fileName, ifstream::in);
@@ -29,7 +29,7 @@ Gazetteer::Gazetteer(string name, string fileName) {
  * Accessor method for the name of the gazetteer.
  * @return Name of the gazetteer.
  */
-string Gazetteer::getName() {
+string Gazetteer::getName() const{
     return name;
 }
 
@@ -39,7 +39,7 @@ string Gazetteer::getName() {
  * @param word Word to be search in Gazetteer.
  * @return True if the word is in the Gazetteer, False otherwise.
  */
-bool Gazetteer::contains(string word) {
-    string lowerCase = Word::toLowerCase(std::move(word));
+bool Gazetteer::contains(const string& word) {
+    string lowerCase = Word::toLowerCase(word);
     return data.contains(lowerCase);
 }

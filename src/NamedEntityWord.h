@@ -13,8 +13,8 @@ class NamedEntityWord : public Word {
 private:
     NamedEntityType namedEntityType;
 public:
-    NamedEntityWord(string name, NamedEntityType namedEntityType);
-    NamedEntityType getNamedEntityType();
+    NamedEntityWord(const string& name, NamedEntityType namedEntityType);
+    NamedEntityType getNamedEntityType() const;
 };
 
 

@@ -15,11 +15,11 @@ private:
     SlotType type;
     string tag;
 public:
-    Slot(SlotType type, string tag);
-    explicit Slot(string slot);
-    string getTag();
-    SlotType getType();
-    string to_string();
+    Slot(SlotType type, const string& tag);
+    explicit Slot(const string& slot);
+    string getTag() const;
+    SlotType getType() const;
+    string to_string() const;
 };
 
 

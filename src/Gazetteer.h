@@ -14,9 +14,9 @@ private:
     unordered_set<string> data;
     string name;
 public:
-    Gazetteer(string name, string fileName);
-    string getName();
-    bool contains(string word);
+    Gazetteer(const string& name, const string& fileName);
+    string getName() const;
+    bool contains(const string& word);
 };
 
 

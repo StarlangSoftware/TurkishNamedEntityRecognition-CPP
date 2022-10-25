@@ -14,7 +14,7 @@ NERCorpus::NERCorpus() = default;
  *
  * @return A copy of the current {@link NERCorpus} class.
  */
-NERCorpus NERCorpus::emptyCopy() {
+NERCorpus NERCorpus::emptyCopy() const{
     return NERCorpus();
 }
 
@@ -24,10 +24,10 @@ NERCorpus NERCorpus::emptyCopy() {
  *
  * @param fileName Name of the corpus file.
  */
-NERCorpus::NERCorpus(string fileName) {
+NERCorpus::NERCorpus(const string& fileName) {
     ifstream inputStream;
     inputStream.open(fileName, ifstream::in);
-    this->fileName = move(fileName);
+    this->fileName = fileName;
     string line;
     while (inputStream.good()){
         getline(inputStream, line);
@@ -47,7 +47,7 @@ void NERCorpus::addSentence(NamedEntitySentence* sentence) {
  * writeToFile writes the corpus in the format given above into the file with the given fileName.
  * @param fileName Output file name.
  */
-void NERCorpus::writeToFile(string fileName) {
+void NERCorpus::writeToFile(const string& fileName) {
     ofstream output;
     output.open(fileName, ofstream :: out);
     for (Sentence* sentence : sentences){
