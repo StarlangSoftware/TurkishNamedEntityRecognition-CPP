@@ -34,7 +34,7 @@ string Gazetteer::getName() const{
 }
 
 /**
- * The most important method in {@link Gazetteer} class. Checks if the given word exists in the gazetteer. The check
+ * The most important method in Gazetteer class. Checks if the given word exists in the gazetteer. The check
  * is done in lowercase form.
  * @param word Word to be search in Gazetteer.
  * @return True if the word is in the Gazetteer, False otherwise.

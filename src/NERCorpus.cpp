@@ -10,16 +10,16 @@
 NERCorpus::NERCorpus() = default;
 
 /**
- * A clone method for the {@link NERCorpus} class.
+ * A clone method for the NERCorpus class.
  *
- * @return A copy of the current {@link NERCorpus} class.
+ * @return A copy of the current NERCorpus class.
  */
 NERCorpus NERCorpus::emptyCopy() const{
     return NERCorpus();
 }
 
 /**
- * Another constructor of {@link NERCorpus} which takes a fileName of the corpus as an input, reads the
+ * Another constructor of NERCorpus which takes a fileName of the corpus as an input, reads the
  * corpus from that file.
  *
  * @param fileName Name of the corpus file.
@@ -36,7 +36,7 @@ NERCorpus::NERCorpus(const string& fileName) {
 }
 
 /**
- * addSentence adds a new sentence to the sentences {@link ArrayList}
+ * addSentence adds a new sentence to the sentences ArrayList
  * @param s Sentence to be added.
  */
 void NERCorpus::addSentence(NamedEntitySentence* sentence) {
