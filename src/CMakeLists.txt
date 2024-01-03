@@ -3,10 +3,7 @@ project(NamedEntityRecognition)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_FLAGS "-O3")
 
-include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-conan_basic_setup()
+find_package(corpus REQUIRED)
 
-add_library(NamedEntityRecognition src/Gazetteer.cpp src/Gazetteer.h src/NamedEntityType.h src/AutoNER.h src/NamedEntityWord.cpp src/NamedEntityWord.h src/NamedEntitySentence.cpp src/NamedEntitySentence.h src/NERCorpus.cpp src/NERCorpus.h src/SlotType.h src/Slot.cpp src/Slot.h)
-target_link_libraries(NamedEntityRecognition ${CONAN_LIBS})
-add_executable(Test src/Gazetteer.cpp src/Gazetteer.h src/NamedEntityType.h src/AutoNER.h src/NamedEntityWord.cpp src/NamedEntityWord.h src/NamedEntitySentence.cpp src/NamedEntitySentence.h src/NERCorpus.cpp src/NERCorpus.h Test/GazetteerTest.cpp Test/NERCorpusTest.cpp Test/NamedEntityTypeTest.cpp src/SlotType.h src/Slot.cpp src/Slot.h Test/SlotTest.cpp)
-target_link_libraries(Test ${CONAN_LIBS})
+add_library(NamedEntityRecognition Gazetteer.cpp Gazetteer.h NamedEntityType.h AutoNER.h NamedEntityWord.cpp NamedEntityWord.h NamedEntitySentence.cpp NamedEntitySentence.h NERCorpus.cpp NERCorpus.h SlotType.h Slot.cpp Slot.h)
+target_link_libraries(NamedEntityRecognition corpus::corpus)
