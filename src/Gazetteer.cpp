@@ -3,7 +3,6 @@
 //
 
 #include <fstream>
-#include <utility>
 #include "Dictionary/Word.h"
 #include "Gazetteer.h"
 
@@ -39,7 +38,7 @@ string Gazetteer::getName() const{
  * @param word Word to be search in Gazetteer.
  * @return True if the word is in the Gazetteer, False otherwise.
  */
-bool Gazetteer::contains(const string& word) {
+bool Gazetteer::contains(const string& word) const {
     string lowerCase = Word::toLowerCase(word);
     return data.contains(lowerCase);
 }

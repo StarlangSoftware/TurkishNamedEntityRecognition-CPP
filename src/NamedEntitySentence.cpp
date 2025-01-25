@@ -6,12 +6,12 @@
 #include "NamedEntityWord.h"
 #include "NamedEntitySentence.h"
 #include "NamedEntityType.h"
+#include "StringUtils.h"
 
 /**
  * Empty constructor for NamedEntitySentence
  */
-NamedEntitySentence::NamedEntitySentence() {
-}
+NamedEntitySentence::NamedEntitySentence() = default;
 
 /**
  * Another constructor of NamedEntitySentence. It takes input a named entity annotated sentence in string
@@ -21,17 +21,17 @@ NamedEntitySentence::NamedEntitySentence() {
 NamedEntitySentence::NamedEntitySentence(const string& sentence) {
     string entityType, candidate;
     NamedEntityType type = NamedEntityType::NONE;
-    vector<string> wordArray = Word::split(sentence);
+    vector<string> wordArray = StringUtils::split(sentence);
     for (const string& word : wordArray){
         if (!word.empty()){
             if (word != "<b_enamex"){
-                if (Word::startsWith(word, "TYPE=\"")){
+                if (StringUtils::startsWith(word, "TYPE=\"")){
                     int typeIndexEnd = word.find_first_of('\"', 6);
                     if (typeIndexEnd != -1){
                         entityType = word.substr(6, typeIndexEnd - 6);
                         type = getNamedEntityType(entityType);
                     }
-                    if (Word::endsWith(word, "e_enamex>")){
+                    if (StringUtils::endsWith(word, "e_enamex>")){
                         candidate = word.substr(word.find_first_of('>') + 1, word.find_first_of('<') - word.find_first_of('>') - 1);
                         if (!candidate.empty()){
                             words.emplace_back(new NamedEntityWord(candidate, type));
@@ -44,7 +44,7 @@ NamedEntitySentence::NamedEntitySentence(const string& sentence) {
                         }
                     }
                 } else {
-                    if (Word::endsWith(word, "e_enamex>")){
+                    if (StringUtils::endsWith(word, "e_enamex>")){
                         candidate = word.substr(0, word.find_first_of('<'));
                         if (!candidate.empty()){
                             words.emplace_back(new NamedEntityWord(candidate, type));

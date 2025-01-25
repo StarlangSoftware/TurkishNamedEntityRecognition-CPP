@@ -37,7 +37,7 @@ NERCorpus::NERCorpus(const string& fileName) {
 
 /**
  * addSentence adds a new sentence to the sentences ArrayList
- * @param s Sentence to be added.
+ * @param sentence Sentence to be added.
  */
 void NERCorpus::addSentence(NamedEntitySentence* sentence) {
     sentences.emplace_back(sentence);
@@ -47,7 +47,7 @@ void NERCorpus::addSentence(NamedEntitySentence* sentence) {
  * writeToFile writes the corpus in the format given above into the file with the given fileName.
  * @param fileName Output file name.
  */
-void NERCorpus::writeToFile(const string& fileName) {
+void NERCorpus::writeToFile(const string& fileName) const {
     ofstream output;
     output.open(fileName, ofstream :: out);
     for (Sentence* sentence : sentences){

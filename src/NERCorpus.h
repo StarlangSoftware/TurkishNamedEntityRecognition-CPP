@@ -15,7 +15,7 @@ public:
     NERCorpus emptyCopy() const;
     NERCorpus(const string& fileName);
     void addSentence(NamedEntitySentence* sentence);
-    void writeToFile(const string& fileName);
+    void writeToFile(const string& fileName) const;
 };
 
 
