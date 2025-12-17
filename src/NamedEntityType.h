@@ -4,6 +4,7 @@
 
 #ifndef NAMEDENTITYRECOGNITION_NAMEDENTITYTYPE_H
 #define NAMEDENTITYRECOGNITION_NAMEDENTITYTYPE_H
+#include <algorithm>
 #include <string>
 
 using namespace std;
