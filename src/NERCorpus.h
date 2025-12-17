@@ -12,7 +12,7 @@
 class NERCorpus : public Corpus{
 public:
     NERCorpus();
-    NERCorpus emptyCopy() const;
+    [[nodiscard]] NERCorpus emptyCopy() const;
     NERCorpus(const string& fileName);
     void addSentence(NamedEntitySentence* sentence);
     void writeToFile(const string& fileName) const;

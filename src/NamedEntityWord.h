@@ -14,7 +14,7 @@ private:
     NamedEntityType namedEntityType;
 public:
     NamedEntityWord(const string& name, NamedEntityType namedEntityType);
-    NamedEntityType getNamedEntityType() const;
+    [[nodiscard]] NamedEntityType getNamedEntityType() const;
 };
 
 

@@ -17,9 +17,9 @@ private:
 public:
     Slot(SlotType type, const string& tag);
     explicit Slot(const string& slot);
-    string getTag() const;
-    SlotType getType() const;
-    string to_string() const;
+    [[nodiscard]] string getTag() const;
+    [[nodiscard]] SlotType getType() const;
+    [[nodiscard]] string to_string() const;
 };
 
 

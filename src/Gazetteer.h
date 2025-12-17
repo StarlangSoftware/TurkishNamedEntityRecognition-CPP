@@ -15,8 +15,8 @@ private:
     string name;
 public:
     Gazetteer(const string& name, const string& fileName);
-    string getName() const;
-    bool contains(const string& word) const;
+    [[nodiscard]] string getName() const;
+    [[nodiscard]] bool contains(const string& word) const;
 };
 
 

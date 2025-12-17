@@ -11,7 +11,7 @@
 class NamedEntitySentence : public Sentence{
 public:
     NamedEntitySentence();
-    NamedEntitySentence(const string& sentence);
+    explicit NamedEntitySentence(const string& sentence);
 };
 
 
